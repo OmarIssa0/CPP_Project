@@ -41,5 +41,5 @@ int main ()
         else
             std::cout << "Invalid command. Please try again." << std::endl;
     }
-    return 0;
+    return (EXIT_SUCCESS);
 }
