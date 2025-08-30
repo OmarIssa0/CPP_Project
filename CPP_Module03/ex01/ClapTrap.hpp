@@ -6,7 +6,7 @@
 /*   By: oissa <oissa@student.42amman.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 20:30:57 by oissa             #+#    #+#             */
-/*   Updated: 2025/08/26 20:36:49 by oissa            ###   ########.fr       */
+/*   Updated: 2025/08/30 15:41:56 by oissa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,13 @@
 
 class ClapTrap
 {
-    private:
-        // ! private part 
+    protected:
         int hitPoints;
         int energyPoint;
         int attackDamage;
         std::string name;
 
     public:
-        // ! public part
         ClapTrap();
         ClapTrap(const std::string &name);
         ClapTrap(const ClapTrap &other);

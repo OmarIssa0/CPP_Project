@@ -6,7 +6,7 @@
 /*   By: oissa <oissa@student.42amman.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 20:39:30 by oissa             #+#    #+#             */
-/*   Updated: 2025/08/26 21:31:55 by oissa            ###   ########.fr       */
+/*   Updated: 2025/08/30 17:22:43 by oissa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 
 ClapTrap:: ClapTrap() : hitPoints(10) , energyPoint(10), attackDamage(0), name("") 
 {
-    // std::cout << "ClapTrap " << name << " created (default)" << std::endl; 
+    std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name) : hitPoints(10) , energyPoint(10), attackDamage(0), name(name) 
 {
+    std::cout << "ClapTrap constructor called for " << name << std::endl;
     // std::cout << "ClapTrap " << name << " created" << std::endl;
 }
 
@@ -28,7 +29,7 @@ ClapTrap::ClapTrap(const ClapTrap &other) : hitPoints(other.hitPoints),
     energyPoint(other.energyPoint), attackDamage(other.attackDamage) 
 {
     // std::cout << "Copy constructor called" << std::endl;
-} 
+}
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other) 
 {
@@ -41,7 +42,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
     return *this;
 }
 
-ClapTrap::~ClapTrap() {}
+ClapTrap::~ClapTrap()
+{
+    std::cout << "ClapTrap destructor called for " << name << std::endl;
+}
 
 void ClapTrap::attack(const std::string &target)
 {
