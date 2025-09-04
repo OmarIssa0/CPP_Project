@@ -29,7 +29,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
     std::cout << "ScavTrap assignment operator called" << std::endl;
     if (this != &other)
     {
-        ClapTrap::operator=(other); // call parent assignment
+        ClapTrap::operator=(other);
     }
     return *this;
 }
