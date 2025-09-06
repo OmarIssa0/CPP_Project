@@ -6,7 +6,7 @@
 /*   By: oissa <oissa@student.42amman.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 20:39:30 by oissa             #+#    #+#             */
-/*   Updated: 2025/08/30 17:22:43 by oissa            ###   ########.fr       */
+/*   Updated: 2025/09/05 17:17:12 by oissa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string>
 #include "ClapTrap.hpp"
 
-ClapTrap:: ClapTrap() : hitPoints(10) , energyPoint(10), attackDamage(0), name("") 
+ClapTrap::ClapTrap() : hitPoints(10) , energyPoint(10), attackDamage(0), name("") 
 {
     std::cout << "ClapTrap default constructor called" << std::endl;
 }
