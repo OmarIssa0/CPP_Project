@@ -19,23 +19,17 @@ int main ()
     ClapTrap a("Omar");
     ClapTrap b("Enemy");
 
-    // Omar attacks Enemy
     a.attack("Enemy");
 
-    // Enemy takes damage
     b.takeDamage(3);
 
-    // Omar repairs himself
     a.beRepaired(2);
 
-    // استنزاف الطاقة
     for (int i = 0; i < 11; i++)
         a.attack("Enemy");
 
-    // ضرب Omar ليموت
     a.takeDamage(20);
 
-    // محاولة إصلاح وهو ميت
     a.beRepaired(5);
 
     return 0;
