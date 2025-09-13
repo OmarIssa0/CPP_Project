@@ -1,4 +1,4 @@
-#include <iostrem>
+#include <iostream>
 #include <string>
 
 
@@ -10,11 +10,13 @@ class Brain
 {
     private:
         std::string ideas[100];
-    private:
+    public:
         Brain();
         Brain(const Brain &other);
         Brain &operator=(const Brain &other);
         ~Brain();
+        std::string &getData(int index);
+        void setData(int index, const std::string &string);
 };
 
 #endif

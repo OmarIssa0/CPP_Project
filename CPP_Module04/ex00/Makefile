@@ -1,13 +1,13 @@
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJS = $(SRCS:.cpp=.o)
-NAME = Polymorphism
+NAME = Animal
 SRCS = main.cpp						\
-		controller/Animal.cpp		\
-		controller/Dog.cpp			\
-		controller/Cat.cpp			\
-		controller/WrongAnimal.cpp	\
-		controller/WrongCat.cpp		
+		Animal.cpp		\
+		Dog.cpp			\
+		Cat.cpp			\
+		WrongAnimal.cpp	\
+		WrongCat.cpp		
 all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)

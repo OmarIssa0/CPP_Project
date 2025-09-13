@@ -11,9 +11,9 @@ ScavTrap::ScavTrap()
     attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string n) : ClapTrap(n)
 {
-    std::cout << "ScavTrap constructor called for " << name << std::endl;
+    std::cout << "ScavTrap constructor called for " << n << std::endl;
     hitPoints = 100;
     energyPoint = 50;
     attackDamage = 20;

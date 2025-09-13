@@ -1,6 +1,7 @@
 #include "iostream"
 #include <string>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 #ifndef DOG_HPP
 #define DOG_HPP
@@ -16,6 +17,7 @@ class Dog : public Animal
         ~Dog();
         // ! override 
         void makeSound () const;
+        Brain *getBrain() const;
 };
 
 #endif

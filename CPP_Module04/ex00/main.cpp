@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
-#include "model/Dog.hpp"
-#include "model/Cat.hpp"
-#include "model/WrongAnimal.hpp"
-#include "model/WrongCat.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {

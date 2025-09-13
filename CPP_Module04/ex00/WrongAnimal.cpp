@@ -1,15 +1,15 @@
-#include "../model/WrongAnimal.hpp"
+#include "WrongAnimal.hpp"
 #include <string>
 #include <iostream>
 
-WrongAnimal::WrongAnimal() : type("") 
+WrongAnimal::WrongAnimal() : type("")
 {
     std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const std::string &type) : type(type)
+WrongAnimal::WrongAnimal(const std::string &t) : type(t)
 {
-    std::cout << "WrongAnimal constructor called for " << type << std::endl;
+    std::cout << "WrongAnimal constructor called for " << t << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &other) : type(other.type) {}

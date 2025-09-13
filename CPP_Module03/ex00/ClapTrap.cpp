@@ -6,7 +6,7 @@
 /*   By: oissa <oissa@student.42amman.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 20:39:30 by oissa             #+#    #+#             */
-/*   Updated: 2025/09/05 17:17:18 by oissa            ###   ########.fr       */
+/*   Updated: 2025/09/13 18:48:17 by oissa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap() : hitPoints(10) , energyPoint(10), attackDamage(0), name(""
     // std::cout << "ClapTrap " << name << " created (default)" << std::endl; 
 }
 
-ClapTrap::ClapTrap(const std::string &name) : hitPoints(10) , energyPoint(10), attackDamage(0), name(name) 
+ClapTrap::ClapTrap(const std::string &n) : hitPoints(10) , energyPoint(10), attackDamage(0), name(n) 
 {
     // std::cout << "ClapTrap " << name << " created" << std::endl;
 }
