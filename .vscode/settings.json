@@ -106,7 +106,11 @@
     "list": "cpp",
     "map": "cpp",
     "fstream": "cpp",
-    "sstream": "cpp"
+    "sstream": "cpp",
+    "condition_variable": "cpp",
+    "ratio": "cpp",
+    "semaphore": "cpp",
+    "stop_token": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
