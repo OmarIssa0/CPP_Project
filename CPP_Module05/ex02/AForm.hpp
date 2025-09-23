@@ -25,12 +25,12 @@ public:
     int getGradeToSign() const;
     int getGradeToExecute() const;
     void beSigned(const Bureaucrat &bureaucrat);
-    virtual execute(Bureaucrat const &bureaucrat) const = 0;
+    virtual void execute(Bureaucrat const &bureaucrat) const = 0;
     class AFormNotSignedException : public std::exception
     {
     public:
         const char *what() const throw();
-    }
+    };
     class GradeTooHighException : public std::exception
     {
     public:

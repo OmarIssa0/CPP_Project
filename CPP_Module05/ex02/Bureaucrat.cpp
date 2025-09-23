@@ -80,6 +80,20 @@ void Bureaucrat::signForm(AForm &form)
     }
 }
 
+void Bureaucrat::executeForm(AForm const &form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->getName() << " executes " << form.getName() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << this->getName() << " cannot execute " << form.getName()
+                  << " because " << e.what() << std::endl;
+    }
+}
+
 std::ostream &operator<<(std::ostream &os, Bureaucrat const &obj)
 {
     os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";

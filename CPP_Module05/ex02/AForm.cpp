@@ -14,6 +14,11 @@ const char *AForm::GradeTooLowException::what() const throw()
     return "Grade too low";
 }
 
+const char *AForm::AFormNotSignedException::what() const throw()
+{
+    return "Form not signed";
+}
+
 AForm::AForm() : name("defalt Name"), gradeToSign(0), gradeToExecute(0)
 {
     this->isSigned = false;

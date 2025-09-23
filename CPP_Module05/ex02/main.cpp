@@ -1,59 +1,83 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <iostream>
+#include <fstream>
 
 int main()
 {
+    std::cout << "== Setup bureaucrats ==" << std::endl;
     Bureaucrat boss("Boss", 1);
-    Bureaucrat junior("Junior", 120);
-    Bureaucrat mid("MidLevel", 50);
+    Bureaucrat senior("Senior", 25);
+    Bureaucrat mid("Mid", 50);
+    Bureaucrat junior("Junior", 140);
 
-    std::cout << "\n=== staff ===\n";
     std::cout << boss << std::endl;
+    std::cout << senior << std::endl;
     std::cout << mid << std::endl;
     std::cout << junior << std::endl;
 
-    Form topSecret("TopSecret", false, 5, 10);
-    Form standard("StandardForm", false, 50, 50);
-    Form easy("EasyForm", false, 150, 150);
+    std::cout << "\n== Create forms ==" << std::endl;
+    ShrubberyCreationForm shrub("garden");
+    RobotomyRequestForm robo("Bender");
+    PresidentialPardonForm pardon("Arthur Dent");
 
-    std::cout << "\n=== Form before sign ===\n";
-    std::cout << topSecret << std::endl;
-    std::cout << standard << std::endl;
-    std::cout << easy << std::endl;
+    std::cout << shrub << std::endl;
+    std::cout << robo << std::endl;
+    std::cout << pardon << std::endl;
 
-    std::cout << "\n=== Test Sign Form ===\n";
+    std::cout << "\n== Test signing attempts ==" << std::endl;
 
-    // Done
-    boss.signForm(topSecret);
-    // X
-    mid.signForm(topSecret);
-    mid.signForm(standard);
-    junior.signForm(easy);
+    boss.signForm(shrub);    // should sign
+    mid.signForm(robo);      // should fail (mid grade too low for robo sign)
+    senior.signForm(robo);   // should sign
+    junior.signForm(pardon); // should fail (too low)
 
-    std::cout << "\n=== Form After Sign ===\n";
-    std::cout << topSecret << std::endl;
-    std::cout << standard << std::endl;
-    std::cout << easy << std::endl;
+    std::cout << "\n== State after signing ==" << std::endl;
+    std::cout << shrub << std::endl;
+    std::cout << robo << std::endl;
+    std::cout << pardon << std::endl;
 
-    try
-    {
-        Bureaucrat invalid("Invalid", 0);
-    }
-    catch (std::exception &e)
-    {
-        std::cout << "Exception: " << e.what() << std::endl;
-    }
+    std::cout << "\n== Test executing forms ==" << std::endl;
 
     try
     {
-        Bureaucrat tooLow("TooLow", 200);
+        boss.executeForm(shrub);
     }
     catch (std::exception &e)
     {
-        std::cout << "Exception: " << e.what() << std::endl;
+        std::cout << "execute shrub failed: " << e.what() << std::endl;
     }
-    
 
+    try
+    {
+        mid.executeForm(robo);
+    }
+    catch (std::exception &e)
+    {
+        std::cout << "execute robo by mid failed: " << e.what() << std::endl;
+    }
+
+    try
+    {
+        senior.executeForm(robo);
+    }
+    catch (std::exception &e)
+    {
+        std::cout << "execute robo by senior failed: " << e.what() << std::endl;
+    }
+
+    try
+    {
+        boss.executeForm(pardon);
+    }
+    catch (std::exception &e)
+    {
+        std::cout << "execute pardon failed: " << e.what() << std::endl;
+    }
+
+    std::cout << "\n== Done tests ==" << std::endl;
     return 0;
 }
