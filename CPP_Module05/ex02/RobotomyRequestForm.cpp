@@ -1,6 +1,7 @@
 #include "RobotomyRequestForm.hpp"
 #include <iostream>
 #include <stdexcept>
+#include <cmath>
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), target("Default")
 {
@@ -37,5 +38,10 @@ void RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
     if (bureaucrat.getGrade() > this->getGradeToExecute())
         throw AForm::GradeTooLowException();
 
-    std::cout << "Bzzzz... drilling noises for " << this->target << std::endl;
+   std::cout << "Drrrrrrrrrrrrrrrr... Drrrrrrrrrr... (drilling noises)" << std::endl;
+    if(rand() % 2)
+        std::cout << target << " has been robotomized successfully!" << std::endl;
+    else
+        std::cout << "The robotomy failed on " << target << "." << std::endl;
+ 
 }

@@ -18,8 +18,12 @@ Form::Form() : name(""), isSigned(false), gradeToSign(0), gradeToExecute(0)
 {
 }
 
-Form::Form(std::string name, bool isSigned, int gradeToSign, int gradeToExecute) : name(name), isSigned(isSigned), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
+Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name(name), isSigned(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
+    if (gradeToExecute < 1 || gradeToSign < 1)
+        throw GradeTooHighException();
+    if (gradeToExecute > 150 || gradeToSign > 150)
+        throw GradeTooLowException();
 }
 
 Form::Form(const Form &other) : name(other.name), isSigned(other.isSigned), gradeToSign(other.gradeToSign), gradeToExecute(other.gradeToExecute)

@@ -13,9 +13,9 @@ int main()
     std::cout << mid << std::endl;
     std::cout << junior << std::endl;
 
-    Form topSecret("TopSecret", false, 5, 10);
-    Form standard("StandardForm", false, 50, 50);
-    Form easy("EasyForm", false, 150, 150);
+    Form topSecret("TopSecret", 5, 10);
+    Form standard("StandardForm", 50, 50);
+    Form easy("EasyForm", 150, 150);
 
     std::cout << "\n=== Form before sign ===\n";
     std::cout << topSecret << std::endl;

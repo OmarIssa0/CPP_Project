@@ -30,10 +30,10 @@ int main()
 
     std::cout << "\n== Test signing attempts ==" << std::endl;
 
-    boss.signForm(shrub);    // should sign
-    mid.signForm(robo);      // should fail (mid grade too low for robo sign)
-    senior.signForm(robo);   // should sign
-    junior.signForm(pardon); // should fail (too low)
+    boss.signForm(shrub);
+    mid.signForm(robo);
+    senior.signForm(robo);
+    junior.signForm(pardon);
 
     std::cout << "\n== State after signing ==" << std::endl;
     std::cout << shrub << std::endl;
