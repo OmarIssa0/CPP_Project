@@ -34,7 +34,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const
 
     std::ofstream ofs((this->target + "_shrubbery").c_str());
     if (!ofs)
-        return; // fail silently or could throw
+        return;
 
     ofs << "       _-_       " << std::endl;
     ofs << "    /~~   ~~\\    " << std::endl;

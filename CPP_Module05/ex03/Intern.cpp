@@ -24,8 +24,9 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
     std::string formNames[3] = {
         "shrubbery creation",
         "robotomy request",
-        "presidential pardon"
-    };
+        "presidential pardon"};
+    if (formName != "shrubbery creation" && formName != "robotomy request" && formName != "presidential pardon")
+        return 0;
     AForm *forms[3] = {
         new ShrubberyCreationForm(target),
         new RobotomyRequestForm(target),

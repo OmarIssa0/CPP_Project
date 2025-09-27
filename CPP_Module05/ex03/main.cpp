@@ -1,21 +1,22 @@
-#include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 #include <iostream>
-#include <fstream>
-
-int main()
-{
-    Intern someRandomIntern;
-    AForm* rrf;
-    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-    Bureaucrat boss("Boss", 1);
-    std::cout << *rrf << std::endl;
-    boss.signForm(*rrf);
-    boss.executeForm(*rrf);
-    delete rrf;
-    return 0;
+int main() {
+  Intern intern;
+ 
+  AForm *form1 = intern.makeForm("shrubbery creation", "home");
+  AForm *form2 = intern.makeForm("robotomy request", "Bender");
+  AForm *form3 = intern.makeForm("presidential pardon", "Ford");
+  AForm *form4 = intern.makeForm("invalid form", "Nobody");
+ 
+  delete form1;
+  delete form2;
+  delete form3;
+  delete form4;
+ 
+  return 0;
 }
