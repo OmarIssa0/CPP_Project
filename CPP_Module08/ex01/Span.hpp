@@ -10,14 +10,18 @@ class Span
 {
     private:
         std::vector<int> myNumber;
+        unsigned int maxSize;
 
     public:
-        Span(int n);
+        Span(unsigned int N);
         Span(const Span &other);
         Span &operator=(const Span &other);
+        ~Span();
         void addNumber(int);
+        void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
         int shortestSpan();
         int longestSpan();
 };
+
 
 #endif 
