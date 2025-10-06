@@ -13,7 +13,7 @@ int main ()
         for (int i = 0; i < size; i++)
             numbers.push_back(i);
         
-        sp.addNumber(numbers.begin(), numbers.end());
+        sp.addNumbers(numbers.begin(), numbers.end());
         
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span: " << sp.longestSpan() << std::endl;
