@@ -33,15 +33,6 @@ void Span::addNumber(int num)
         throw std::runtime_error("Span is full, cannot add more numbers");
     myNumber.push_back(num);
 }
-
-// void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
-// {
-//    for (; begin != end; ++begin)
-//    {
-//         addNumber(*begin);
-//     }
-// }
-
 /* 
    ! myNumber = [5, 3, 17, 9]
    ! sorted = [3, 5, 9, 17]

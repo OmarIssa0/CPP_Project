@@ -1,8 +1,6 @@
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
 
-#include <string>
-#include <iostream>
 #include <stack>
 #include <deque>
 
@@ -57,7 +55,7 @@ class MutantStack : public std::stack<T>
             return this->c.rbegin();
         }
         const_reverse_iterator rend() const
-        {
+        { 
             return this->c.rend();
         }
 };
