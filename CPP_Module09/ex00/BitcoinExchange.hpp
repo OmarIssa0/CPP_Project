@@ -9,21 +9,20 @@
 class BitcoinExchange
 { 
     private:
-        std::map<std::string, float> dataBase;
+        std::map<std::string, double> dataBase;
+        
+        void    loadDatabase();
+        bool    isValidDate(const std::string &date);
+        double  getExchangeRate(const std::string &date);
+        void    trim(std::string& str);
     
     public:
         BitcoinExchange();
         BitcoinExchange(const BitcoinExchange &other);
         BitcoinExchange &operator=(const BitcoinExchange &other);
         ~BitcoinExchange();
-        /*
-            ! controller:
-                * 1) validation (empty, 0/1000 or -1)
-                * 2) check the file
-        */
-        void    handleFile(std::ifstream &file, const std::string &fileName, std::string &result);
-        void trim(std::string& str);
+        
+        void    handleFile(const std::string &fileName, std::string &result);
 };
-
 
 #endif

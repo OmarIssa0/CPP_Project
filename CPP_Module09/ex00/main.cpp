@@ -4,7 +4,6 @@
 #include <string>
 #include <fstream>
 
-
 int main(int ac, char **av)
 {
     if (ac != 2)
@@ -15,9 +14,8 @@ int main(int ac, char **av)
     BitcoinExchange btc;
     try
     {
-        std::ifstream file;
-        std::string result;
-        btc.handleFile(file, av[1], result);
+        std::string     result;
+        btc.handleFile(av[1], result);
     } catch (std::exception &e)
     {
         std::cout << e.what() << std::endl;
