@@ -30,7 +30,7 @@ BitcoinExchange::~BitcoinExchange()
 
 void BitcoinExchange::trim(std::string& str)
 {
-    while (!str.empty() && (str[0] == ' '  || str[0] == '\t' || str[0] == '\n' || str[0] == '\r'))
+    while (!str.empty() && (str[0] == ' ' || str[0] == '\t' || str[0] == '\n' || str[0] == '\r'))
     {
         str.erase(str.begin());
     }
