@@ -22,7 +22,7 @@ class BitcoinExchange
         BitcoinExchange &operator=(const BitcoinExchange &other);
         ~BitcoinExchange();
         
-        void    handleFile(const std::string &fileName, std::string &result);
+        void    handleFile(const std::string &fileName);
 };
 
 #endif

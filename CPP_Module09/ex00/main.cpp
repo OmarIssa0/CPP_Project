@@ -14,8 +14,7 @@ int main(int ac, char **av)
     BitcoinExchange btc;
     try
     {
-        std::string     result;
-        btc.handleFile(av[1], result);
+        btc.handleFile(av[1]);
     } catch (std::exception &e)
     {
         std::cout << e.what() << std::endl;

@@ -88,6 +88,11 @@ bool BitcoinExchange::isValidDate(const std::string &date)
         return false;
         
     int daysInMonth;
+    // ! 2024 -> year % 4 == 0 true
+    // ! 2024 -> year % 100 != 0 true
+    // * 2020 -> year % 4 == 0 true
+    // * 2020 -> year % 100 != 0 false
+    // * 2020 -> year % 400 == 0 true
     switch (month) {
         case 1: case 3: case 5: case 7: case 8: case 10: case 12: 
             daysInMonth = 31; break;
@@ -103,21 +108,26 @@ bool BitcoinExchange::isValidDate(const std::string &date)
     return (day >= 1 && day <= daysInMonth);
 }
 
+/*
+? 2021-12-01 → 48000  
+? 2021-12-10 → 49000  
+? 2021-12-20 → 50000
+    ! lower_bound("2021-12-15") -> "2021-12-20"
+    * --it -> "2021-12-10"
+*/
 double BitcoinExchange::getExchangeRate(const std::string &date)
 {
     std::map<std::string, double>::iterator it = dataBase.find(date);
     if (it != dataBase.end())
         return it->second;
-    
     it = dataBase.lower_bound(date);
     if (it == dataBase.begin())
         throw std::runtime_error("Error: no data available for date " + date);
-    
     --it;
     return it->second;
 }
 
-void BitcoinExchange::handleFile(const std::string &fileName, std::string &)
+void BitcoinExchange::handleFile(const std::string &fileName)
 {
     std::ifstream file(fileName.c_str());
     if (!file.is_open())
@@ -143,14 +153,14 @@ void BitcoinExchange::handleFile(const std::string &fileName, std::string &)
         trim(date);
         trim(valueStr);
         
-        // Validate date
+        // ! Validate date
         if (!isValidDate(date))
         {
             std::cout << "Error: bad input => " << date << std::endl;
             continue;
         }
         
-        // Validate value
+        // ! Validate value
         if (valueStr.empty())
         {
             std::cout << "Error: bad input => " << valueStr << std::endl;
